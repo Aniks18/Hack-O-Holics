@@ -1,0 +1,414 @@
+/* Container for the dashboard */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative; /* For the animated pointer */
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Search container styles */
+.search-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.search-input {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  width: 250px;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.search-button {
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(89, 126, 250, 0.3);
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: transform 0.5s ease, background 0.3s ease;
+}
+
+.search-button:hover {
+  background: rgba(234, 232, 232, 0.5);
+}
+
+.search-button:focus {
+  outline: none;
+}
+
+.search-button:active {
+  animation: rotateX 0.6s ease-in-out forwards;
+}
+
+/* Animation for 3D rotation effect */
+@keyframes rotateX {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+/* Error message styles */
+.error-message {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* Search result styles */
+.search-result {
+  background-color: #6068d5b1;
+  border: 1px solid #bee5eb;
+  color: #fff4f4;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* News container styles */
+.news-container {
+  margin-top: 24px;
+}
+
+.news-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.news-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff40 transparent;
+}
+
+.news-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.news-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.news-scroll::-webkit-scrollbar-thumb {
+  background-color: #ffffff40;
+  border-radius: 20px;
+}
+
+
+/* Summary card styles */
+.summary-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.summary-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.summary-card p {
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.summary-card strong {
+  font-weight: 600;
+}
+/* News card styles */
+.news-card {
+  flex: 0 0 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-image, .news-image-placeholder {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.news-image-placeholder {
+  background-color: #cccccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+  font-weight: bold;
+}
+
+.news-content {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.news-source, .news-date {
+  font-size: 0.8rem;
+  color: #e0e0e0;
+  margin-bottom: 8px;
+}
+
+.news-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(89, 126, 250, 0.3);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  align-self: flex-start;
+  font-size: 0.9rem;
+}
+
+.news-link:hover {
+  background: rgba(89, 126, 250, 0.5);
+}
+
+/* Twitter container styles */
+.twitter-container {
+  margin-top: 24px;
+}
+
+.twitter-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.twitter-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff40 transparent;
+}
+
+.twitter-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.twitter-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.twitter-scroll::-webkit-scrollbar-thumb {
+  background-color: #ffffff40;
+  border-radius: 20px;
+}
+
+/* Twitter card styles */
+.twitter-card {
+  flex: 0 0 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.twitter-card:hover {
+  transform: translateY(-5px);
+}
+
+.twitter-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.twitter-content {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.twitter-text {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.twitter-date {
+  font-size: 0.8rem;
+  color: #e0e0e0;
+  margin-bottom: 8px;
+}
+
+.twitter-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #e0e0e0;
+  margin-bottom: 8px;
+}
+
+.twitter-hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.twitter-hashtag {
+  font-size: 0.8rem;
+  color: #4a90e2;
+  background: rgba(74, 144, 226, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Resources container styles */
+.resources-container {
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Resources heading styles */
+.resources-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+/* Resources cards container styles */
+.resources-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 16px;
+}
+
+/* Individual resource card styles */
+.resource-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px; /* Add padding for space between image and detail text */
+}
+
+/* Resource image styles */
+.resource-image {
+  width: 100%;
+  height: 250px; /* Adjusted height */
+  object-fit: contain;
+}
+
+/* Resource detail text styles */
+.resource-detail {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* PDF button styles */
+.pdf-container {
+  margin-top: 24px;
+}
+
+.pdf-button {
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(145deg, #6a11cb 0%, #2575fc 100%);
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pdf-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.pdf-button:hover::before {
+  opacity: 1;
+}
+
+.pdf-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+

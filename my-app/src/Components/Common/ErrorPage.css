@@ -1,0 +1,46 @@
+/* Components/Common/ErrorPage.css */
+
+.error-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  .error-content {
+    text-align: center;
+  }
+  
+  .error-code {
+    font-size: 6rem;
+    font-weight: bold;
+    color: #e74c3c; /* Red color for the error code */
+  }
+  
+  .error-message {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  
+  .error-description,
+  .error-suggestion {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .error-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #3498db; /* Blue color for the button */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .error-link:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+  }
+  

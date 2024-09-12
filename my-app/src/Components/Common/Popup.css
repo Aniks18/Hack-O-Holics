@@ -1,0 +1,351 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.popup-container {
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  padding: 25px;
+  border-radius: 12px;
+  width: 600px;
+  max-width: 95%;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3),
+    0 0 30px 15px rgba(0, 0, 139, 0.8), 0 0 40px 20px rgba(246, 144, 19, 0.919);
+  position: relative;
+  overflow-y: auto;
+  max-height: 90%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: black;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-icon {
+  width: 125px;
+  height: 125px;
+  transform: scale(1.5);
+  display: block;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #1a237e;
+  margin: 10px 0;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 1.8em;
+  position: relative;
+}
+
+h2:after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background-color: #1a237e;
+  border-radius: 4px;
+  margin: 8px auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-group,
+.form-row {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #1a237e;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 8px;
+  border-radius: 4px;
+  border: 3px solid #00008b;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="email"] {
+  max-width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  max-height: 120px;
+}
+
+.assistance-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tag {
+  background-color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #00008b;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tag button {
+  background: none;
+  border: none;
+  color: #00008b;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-row .form-group:last-child {
+  margin-right: 0;
+}
+
+.contact-number-container {
+  display: flex;
+  align-items: center;
+  border: 3px solid #00008b;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.country-code {
+  background: #ffffff;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  width: 60px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.contact-number-container input {
+  border: none;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.contact-number-container input::placeholder {
+  color: #999;
+}
+
+.contact-number-container input:focus {
+  outline: none;
+}
+
+.submit-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  background: radial-gradient(circle, #66aaff 0%, #00008b 70%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: auto;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(173, 216, 230, 0.5) 50%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.submit-btn:hover {
+  background-color: transparent;
+  color: white;
+  box-shadow: 0 0 20px 10px rgba(173, 216, 230, 0.8);
+  transform: translateY(-5px);
+}
+
+.submit-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+}
+
+textarea {
+  max-height: 120px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: linear-gradient(
+    120deg,
+    #c2e9fb 0%,
+    #a1c4fd 100%
+  ); /* Gradient background */
+  padding: 30px; /* Increased padding */
+  border-radius: 12px; /* Slightly rounded corners */
+  text-align: center;
+  width: 90%;
+  max-width: 500px; /* Increased max-width */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Slight shadow */
+  position: relative;
+}
+
+.close-modal-btn {
+  background-color: #004a99; /* Initial blue color */
+  color: white;
+  padding: 12px 24px; /* Increased padding */
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  cursor: pointer;
+  margin-top: 20px;
+  position: relative;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for color and transform */
+}
+
+.close-modal-btn:hover {
+  background-color: #003366; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarges the button */
+}
+
+.close-modal-btn:active {
+  transform: scale(0.95); /* Slightly reduces size on click */
+}
+
+.modal-header {
+  font-size: 1.5em; /* Smaller font size */
+  color: #00008b; /* Blue color for the header */
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.modal-header::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 4px;
+  background-color: #00008b; /* Blue underline */
+  border-radius: 4px;
+  margin: 8px auto;
+}
+
+/* Paragraph styling */
+.modal-content p {
+  font-size: 20px; /* Adjust font size */
+  color: black; /* White text color */
+  margin: 0;
+  line-height: 1.5; /* Increase line height for readability */
+}
+
+.popup-container {
+  transform: translateY(0);
+  animation: slide-down 0.5s ease;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00008b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+  border-radius: 4px;
+}
